@@ -89,7 +89,7 @@ map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
 -- alt + m 鍵打開關閉tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 -- Markdown Previewer ON/OFF
-map("n", "<A-p>", ":MarkdownPreviewToggle<CR>", opt)
+map("n", "<A-d>", ":MarkdownPreviewToggle<CR>", opt)
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
