@@ -1,0 +1,16 @@
+local status, treesitter = pcall(require, "nvim-treesitter.configs")
+if not status then
+    vim.notify("沒有找到 nvim-treesitter")
+    return
+end
+
+treesitter.setup({
+  -- 安裝 language parser
+  -- :TSInstallInfo 命令查看支持的語言
+  ensure_installed = { "json", "html", "css", "vim", "lua", "javascript", "typescript", "tsx" },
+  -- 啓用代碼高亮模塊
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+})
