@@ -56,4 +56,4 @@ after saving).
     * c-languages
     * python
     * markdown
-* LaTeX PDF viewer support for `WSL` and 'Linux'
+* LaTeX PDF viewer support for `WSL` and `Linux`
