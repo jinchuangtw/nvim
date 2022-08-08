@@ -1,3 +1,4 @@
+-- Add all the plugin modules here!
 require("basic")
 require("keybindings")
 require("plugins")
