@@ -6,6 +6,13 @@ local function vim_settings()
         let g:vimtex_quickfix_mode = 1
         set conceallevel=1
         let g:tex_conceal='abdmg'
+
+        " Uncomment this block for zathura viewer ---------------------------
+        " let g:vimtex_view_general_viewer = 'zathura'
+        " let g:vimtex_view_method = 'zathura'
+        " -------------------------------------------------------------------
+        
+        " Uncomment this block for skim viewer ------------------------------
         let g:vimtex_view_general_viewer
         \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
         let g:vimtex_view_general_options = '-r @line @pdf @tex'
