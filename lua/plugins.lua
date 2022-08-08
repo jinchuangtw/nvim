@@ -61,6 +61,10 @@ packer.startup({
 		})
 		-- vimtex
 		use("lervag/vimtex")
+		use("neoclide/coc.nvim")
+		-- snippets
+		use("Sirver/ultisnips")
+		use("honza/vim-snippets")
 	end,
 	config = {
 		git = {

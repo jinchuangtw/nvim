@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/Jin/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["coc.nvim"] = {
+    loaded = true,
+    path = "/Users/Jin/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    url = "https://github.com/neoclide/coc.nvim"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/Users/Jin/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
@@ -206,10 +211,20 @@ _G.packer_plugins = {
     path = "/Users/Jin/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ultisnips = {
+    loaded = true,
+    path = "/Users/Jin/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/Sirver/ultisnips"
+  },
   ["vim-bbye"] = {
     loaded = true,
     path = "/Users/Jin/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/Users/Jin/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   },
   ["vim-vsnip"] = {
     loaded = true,

@@ -1,50 +1,45 @@
-local function vimtex()
-    vim.cmd [[packadd! vimtex]]
-    vim.cmd [[
-        " This is necessary for VimTeX to load properly. The "indent" is optional.
-        " Note that most plugin managers will do this automatically.
-        filetype plugin indent on
-
-        " This enables Vim's and neovim's syntax-related features. Without this, some
-        " VimTeX features will not work (see ":help vimtex-requirements" for more
-        " info).
-        syntax enable
-        
+local function vim_settings()
+	vim.cmd([[
         let g:tex_flavor = 'latex'
-        let g:vimtex_quickfix_mode = 0
-        " Viewer options: One may configure the viewer either by specifying a built-in
-        " viewer method:
-        " let g:vimtex_view_method = "skim"
-        let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+        let g:vimtex_compiler_latexmk_engines = {'_':'-xelatex'}
+        let g:vimtex_compiler_latexrun_engines ={'_':'xelatex'}
+        let g:vimtex_quickfix_mode = 1
+        let g:vimtex_view_general_viewer
+        \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
         let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
-        augroup vimtex_mac
-            autocmd!
-            autocmd User VimtexEventCompileSuccess call UpdateSkim()
-        augroup END
+        " This adds a callback hook that updates Skim after compilation
+        let g:vimtex_compiler_callback_hooks = ['UpdateSkim']
 
-        function! UpdateSkim() abort
-            let l:out = b:vimtex.out()
-            let l:src_file_path = expand('%:p')
-            let l:cmd = [g:vimtex_view_general_viewer, '-r']
+        function! UpdateSkim(status)
+        if !a:status | return | endif
 
-            if !empty(system('pgrep Skim'))
+        let l:out = b:vimtex.out()
+        let l:tex = expand('%:p')
+        let l:cmd = [g:vimtex_view_general_viewer, '-r']
+
+        if !empty(system('pgrep Skim'))
             call extend(l:cmd, ['-g'])
-            endif
+        endif
 
-            call jobstart(l:cmd + [line('.'), l:out, l:src_file_path])
+        if has('nvim')
+            call jobstart(l:cmd + [line('.'), l:out, l:tex])
+        elseif has('job')
+            call job_start(l:cmd + [line('.'), l:out, l:tex])
+        else
+            call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
+        endif
         endfunction
-        let g:vimtex_compiler_progname = 'nvr'
-        " VimTeX uses latexmk as the default compiler backend. If you use it, which is
-        " strongly recommended, you probably don't need to configure anything. If you
-        " want another compiler backend, you can change it as follows. The list of
-        " supported backends and further explanation is provided in the documentation,
-        " see ":help vimtex-compiler".
-        let g:vimtex_compiler_method = 'latexrun'
 
-        " Most VimTeX mappings rely on localleader and this can be changed with the
-        " following line. The default is usually fine and is the symbol "\".
-        let maplocalleader = ","
-    ]]
+        let g:vimtex_toc_config = {
+        \ 'name' : 'TOC',
+        \ 'layers' : ['content', 'todo', 'include'],
+        \ 'split_width' : 25,
+        \ 'todo_sorted' : 0,
+        \ 'show_help' : 1,
+        \ 'show_numbers' : 1,
+        \}
+    ]])
 end
-vimtex()
+
+vim_settings()

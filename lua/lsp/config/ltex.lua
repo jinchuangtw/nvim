@@ -5,14 +5,17 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 local opts = {
 	cmd = {
-		"clangd",
+		"ltex-ls",
 	},
 	filetypes = {
-		"c",
-		"cpp",
-		"objc",
-		"objcpp",
-		"cuda",
+		"bib",
+		"gitcommit",
+		"markdown",
+		"org",
+		"plaintex",
+		"rst",
+		"rnoweb",
+		"tex",
 	},
 	flags = {
 		debounce_text_changes = 150,

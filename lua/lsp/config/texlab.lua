@@ -5,14 +5,12 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 local opts = {
 	cmd = {
-		"clangd",
+		"texlab",
 	},
 	filetypes = {
-		"c",
-		"cpp",
-		"objc",
-		"objcpp",
-		"cuda",
+		"tex",
+		"plaintex",
+		"bib",
 	},
 	flags = {
 		debounce_text_changes = 150,
