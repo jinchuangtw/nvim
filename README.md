@@ -12,9 +12,13 @@ My personal configuration files for Neovim. (versions must >= 0.7.0)
 * LSP auto-completion
     * clangd (for `c`, `cpp`, `object-c`, ...)
     * sumneko_lua (for `lua`)
+    * ltex-ls (for 'tex', 'Markdown')
+    * texlab
+    * coc.nvim
 * Code formatter (using `stylua`)
     * lua
 * Markdown previewer
+* LaTeX editor (using `vimtex`)
 
 ## Usage
 ### 1. Install Neovim and related packages
@@ -47,11 +51,9 @@ after saving).
 
 ## TODO
 * LSP for
-    * tex
     * python
-    * markdown
 * Code formatter for 
     * c-languages
     * python
     * markdown
-* Fixing the bugs for `vimtex`
+* LaTeX PDF viewer support for `WSL` and 'Linux'
