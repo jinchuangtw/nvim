@@ -4,6 +4,8 @@ local function vim_settings()
         let g:vimtex_compiler_latexmk_engines = {'_':'-xelatex'}
         let g:vimtex_compiler_latexrun_engines ={'_':'xelatex'}
         let g:vimtex_quickfix_mode = 1
+        set conceallevel=1
+        let g:tex_conceal='abdmg'
         let g:vimtex_view_general_viewer
         \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
         let g:vimtex_view_general_options = '-r @line @pdf @tex'
