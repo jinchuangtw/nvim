@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/Users/Jin/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["git-blame.vim"] = {
+    loaded = true,
+    path = "/Users/Jin/.local/share/nvim/site/pack/packer/start/git-blame.vim",
+    url = "https://github.com/zivyangll/git-blame.vim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/Jin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
