@@ -1,5 +1,6 @@
 # nvim
-My personal configuration files for Neovim. (versions must >= 0.7.0)
+My personal configuration files for Neovim. (v0.7.0)
+> For NVIM v0.8.0-dev, please see the last section in this README file.
 
 ## Main Features
 * Plugins managing (using `packer`)
@@ -10,7 +11,7 @@ My personal configuration files for Neovim. (versions must >= 0.7.0)
 * Fuzzy search
 * Syntax highlight (using `nvim-treesitter`)
 * LSP auto-completion
-    * clangd (for `c`, `cpp`, `object-c`, ...)
+    * clangd (for `c`, `cpp`, ...)
     * sumneko_lua (for `lua`)
     * ltex-ls (for 'tex', 'Markdown')
     * texlab
@@ -57,3 +58,13 @@ after saving).
     * python
     * markdown
 * LaTeX PDF viewer support for `WSL` and `Linux`
+
+## For NVIM v0.8.0-dev
+In this version, some APIs had been deprecated hence we need to update them.
+
+In `lua/lsp/config`, please change
+* `resolved_capabilities` to `server_capabilities`
+* `document_formatting` to `documentFormattingProvider`
+* `document_range_formatting` to `documentRangeFormattingProvider`
+
+For more reference, please see the [issue](https://github.com/neovim/nvim-lspconfig/issues/1891)
