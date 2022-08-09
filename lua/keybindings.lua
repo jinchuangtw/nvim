@@ -92,6 +92,9 @@ map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 map("n", "<A-d>", ":MarkdownPreviewToggle<CR>", opt)
 -- vimtex TOC ON/OFF
 map("n", "<A-v>", ":VimtexTocToggle<CR>", opt)
+
+-- Git blame
+map("n", "<leader>g", ":GitBlame<CR>", opt)
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
 	-- rename

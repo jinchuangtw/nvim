@@ -65,6 +65,8 @@ packer.startup({
 		-- snippets
 		use("Sirver/ultisnips")
 		use("honza/vim-snippets")
+		-- git blame
+		use("zivyangll/git-blame.vim")
 	end,
 	config = {
 		git = {
