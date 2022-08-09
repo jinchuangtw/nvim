@@ -50,6 +50,23 @@ Run `:w` to auto install all the packages (the file will run `:PackerSync`
 after saving).
 > Done! :100:
 
+## Include Path Settings for LSP Servers
+* `clangd` ([ref.](https://clangd.llvm.org/installation#project-setup))
+    * For single project, you could either
+        * Manually create a `.clangd` config file in the root of the project.
+        * Tell the build tools (ex: `CMake`, `Bazel`, etc.) to generate
+        `compile_commands.json`.
+    * For user global configuration, manually create a `config.yaml` file in the
+    path of `clangd`. For detail, please see [this site](https://clangd.llvm.org/config#files) 
+    
+    To tell `clangd` where the external libraries locate, you could add this
+    code to the config files:
+    ```
+    CompileFlags:
+        Add:
+            - "--include-directory={$PATH_OF_SOME_LIBS}"
+            - "--include-directory={$PATH_OF_SOME_OTHER_LIBS}"
+    ```
 ## TODO
 * LSP for
     * python
