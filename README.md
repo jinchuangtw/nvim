@@ -12,12 +12,13 @@ My personal configuration files for Neovim. (v0.7.0)
 * Syntax highlight (using `nvim-treesitter`)
 * LSP auto-completion
     * clangd (for `c`, `cpp`, ...)
+    * jedi_language_server (for `python`)
     * sumneko_lua (for `lua`)
-    * ltex-ls (for 'tex', 'Markdown')
-    * texlab
+    * texlab (for `tex`)
 * Code formatter (using `null-ls`)
     * `lua`
     * `c`, `cpp`
+    * `python`
 * Markdown previewer
 * LaTeX editor (using `vimtex`)
 
@@ -68,11 +69,9 @@ after saving).
             - "--include-directory={$PATH_OF_SOME_OTHER_LIBS}"
     ```
 ## TODO
-* LSP for
-    * python
 * Code formatter for 
-    * python
-    * markdown
+    * `Markdown`
+    * `tex` 
 * LaTeX PDF viewer support for `WSL` and `Linux`
 
 ## For NVIM v0.8.0-dev
