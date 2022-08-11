@@ -71,7 +71,6 @@ after saving).
 * LSP for
     * python
 * Code formatter for 
-    * c-languages
     * python
     * markdown
 * LaTeX PDF viewer support for `WSL` and `Linux`
