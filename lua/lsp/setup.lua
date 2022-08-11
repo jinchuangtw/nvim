@@ -7,8 +7,8 @@ local lsp_installer = require("nvim-lsp-installer")
 local servers = {
 	sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
 	clangd = require("lsp.config.clangd"), -- lua/lsp/config/clangd.lua
-    ltex = require("lsp.config.ltex"), -- lua/lsp/config/ltex.lua
-    texlab = require("lsp.config.texlab"), -- lua/lsp/config/texlab.lua
+	-- ltex = require("lsp.config.ltex"), -- lua/lsp/config/ltex.lua
+	texlab = require("lsp.config.texlab"), -- lua/lsp/config/texlab.lua
 }
 -- 自動安裝 Language Servers
 for name, _ in pairs(servers) do

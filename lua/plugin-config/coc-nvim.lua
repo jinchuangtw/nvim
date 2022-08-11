@@ -1,3 +1,10 @@
+local function coc_whitelist()
+	vim.cmd([[
+        let g:coc_filetypes_enable = [ 'tex' ]
+    ]])
+end
+coc_whitelist()
+
 local function coc_nvim_settings()
 	vim.cmd([[ 
         " Some servers have issues with backup files, see #649.
@@ -64,7 +71,7 @@ local function coc_nvim_settings()
         autocmd CursorHold * silent call CocActionAsync('highlight')
 
         " Symbol renaming.
-        nmap <leader>rn <Plug>(coc-rename)
+        " nmap <leader>rn <Plug>(coc-rename)
 
         " Formatting selected code.
         xmap <leader>f  <Plug>(coc-format-selected)
@@ -148,6 +155,20 @@ local function coc_nvim_settings()
         nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
         " Resume latest coc list.
         nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+        " 
+        function! s:disable_coc_for_type()
+        if index(g:coc_filetypes_enable, &filetype) == -1
+            :silent! CocDisable
+        else
+            :silent! CocEnable
+        endif
+        endfunction
+
+        augroup CocGroup
+        autocmd!
+        autocmd BufNew,BufEnter,BufAdd,BufCreate * call s:disable_coc_for_type()
+        augroup end
     ]])
 end
 coc_nvim_settings()
