@@ -16,6 +16,8 @@ null_ls.setup({
 		formatting.stylua,
 		-- clangd
 		formatting.clang_format,
+		-- black (for python)
+		formatting.black,
 		-- frontend
 		formatting.prettier.with({
 			filetypes = {

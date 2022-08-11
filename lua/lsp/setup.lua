@@ -9,6 +9,7 @@ local servers = {
 	clangd = require("lsp.config.clangd"), -- lua/lsp/config/clangd.lua
 	-- ltex = require("lsp.config.ltex"), -- lua/lsp/config/ltex.lua
 	texlab = require("lsp.config.texlab"), -- lua/lsp/config/texlab.lua
+	jedi_language_server = require("lsp.config.jedi_language_server"),
 }
 -- 自動安裝 Language Servers
 for name, _ in pairs(servers) do
