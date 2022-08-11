@@ -15,9 +15,9 @@ My personal configuration files for Neovim. (v0.7.0)
     * sumneko_lua (for `lua`)
     * ltex-ls (for 'tex', 'Markdown')
     * texlab
-    * coc.nvim
-* Code formatter (using `stylua`)
-    * lua
+* Code formatter (using `null-ls`)
+    * `lua`
+    * `c`, `cpp`
 * Markdown previewer
 * LaTeX editor (using `vimtex`)
 

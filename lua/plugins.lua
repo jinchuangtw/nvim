@@ -49,7 +49,8 @@ packer.startup({
 		-- indent-blankline
 		use("lukas-reineke/indent-blankline.nvim")
 		-- code formatting
-		use("mhartington/formatter.nvim")
+		-- use("mhartington/formatter.nvim")
+		use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
 		-- Markdown previewer
 		use({
 			"iamcco/markdown-preview.nvim",
