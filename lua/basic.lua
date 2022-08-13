@@ -41,8 +41,8 @@ vim.o.cmdheight = 2
 -- 當文件被外部程序修改時，自動加載
 vim.o.autoread = true
 vim.bo.autoread = true
--- 禁止折行
-vim.wo.wrap = false
+-- 自動折行
+vim.wo.wrap = true
 -- 光標在行首尾時<Left><Right>可以跳到下一行
 vim.o.whichwrap = "<,>,[,]"
 -- 允許隱藏被修改過的buffer
