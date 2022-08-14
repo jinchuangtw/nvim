@@ -81,5 +81,6 @@ In `lua/lsp`, please change
 * `resolved_capabilities` to `server_capabilities`
 * `document_formatting` to `documentFormattingProvider`
 * `document_range_formatting` to `documentRangeFormattingProvider`
+* `lsp.buf.formatting` to `lsp.buf.format`
 
 For more reference, please see the [issue](https://github.com/neovim/nvim-lspconfig/issues/1891)
