@@ -1,5 +1,5 @@
 # nvim
-My personal configuration files for Neovim. (v0.7.0)
+My personal configuration files for Neovim. (v0.7.2)
 > For NVIM v0.8.0-dev, please see the last section in this README file.
 
 ## Main Features
@@ -77,7 +77,7 @@ after saving).
 ## For NVIM v0.8.0-dev
 In this version, some APIs had been deprecated hence we need to update them.
 
-In `lua/lsp/config`, please change
+In `lua/lsp`, please change
 * `resolved_capabilities` to `server_capabilities`
 * `document_formatting` to `documentFormattingProvider`
 * `document_range_formatting` to `documentRangeFormattingProvider`
