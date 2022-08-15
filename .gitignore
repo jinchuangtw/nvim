@@ -1,2 +1,5 @@
 # Compiled files
 packer_compiled.lua
+
+# Mac system files
+*.DS_Store
