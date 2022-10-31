@@ -1,6 +1,5 @@
 # nvim
-My personal configuration files for Neovim. (v0.7.2)
-> For NVIM v0.8.0-dev, please see the last section in this README file.
+My personal configuration files for Neovim (v0.8.0). For this version, `nvim-lsp-installer` has been deprecated, instead, `mason.nim` has been installed.
 
 ## Main Features
 * Plugins managing (using `packer`)
@@ -73,14 +72,3 @@ after saving).
     * `Markdown`
     * `tex` 
 * LaTeX PDF viewer support for `WSL` and `Linux`
-
-## For NVIM v0.8.0-dev
-In this version, some APIs had been deprecated hence we need to update them.
-
-In `lua/lsp`, please change
-* `resolved_capabilities` to `server_capabilities`
-* `document_formatting` to `documentFormattingProvider`
-* `document_range_formatting` to `documentRangeFormattingProvider`
-* `lsp.buf.formatting` to `lsp.buf.format`
-
-For more reference, please see the [issue](https://github.com/neovim/nvim-lspconfig/issues/1891)

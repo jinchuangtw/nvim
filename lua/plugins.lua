@@ -25,10 +25,12 @@ packer.startup({
 		use("ahmedkhalf/project.nvim")
 		-- treesitter
 		use({ "nvim-treesitter/nvim-treesitter" })
+		use({ "williamboman/mason.nvim" })
+		use({ "williamboman/mason-lspconfig.nvim" })
 		-- discord presence
 		use("andweeb/presence.nvim")
 		--------------------- LSP --------------------
-		use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
+		-- use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
 		-- Lspconfig
 		use({ "neovim/nvim-lspconfig" })
 		-- 補全引擎
