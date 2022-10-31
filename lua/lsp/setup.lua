@@ -1,33 +1,49 @@
+local status, mason = pcall(require, "mason")
+if not status then
+	vim.notify("Plugin:mason not found.")
+	return
+end
+
+local status, mason_config = pcall(require, "mason-lspconfig")
+if not status then
+	vim.notify("Plugin:mason-lspconfig not found.")
+	return
+end
+
+local status, lspconfig = pcall(require, "lspconfig")
+if not status then
+	vim.notify("Plugin:lspconfig not found.")
+	return
+end
+
 -- :h mason-default-settings
 -- ~/.local/share/nvim/mason
 require("mason").setup({
 	ui = {
-	  icons = {
-		package_installed = "✓",
-		package_pending = "➜",
-		package_uninstalled = "✗",
-	  },
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
 	},
-  })
-  
-  -- mason-lspconfig uses the `lspconfig` server names in the APIs it exposes - not `mason.nvim` package names
-  -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
-  require("mason-lspconfig").setup({
+})
+
+-- mason-lspconfig uses the `lspconfig` server names in the APIs it exposes - not `mason.nvim` package names
+-- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
+require("mason-lspconfig").setup({
 	ensure_installed = {
-	  "clangd",
-	  "cmake",
-	  "jedi_language_server",
-	  "ltex",
-	  "prosemd_lsp",
-	  "pylsp",
-	  "quick_lint_js",
-	  "sumneko_lua",
-	  "texlab"
+		"clangd",
+		"cmake",
+		"jedi_language_server",
+		"ltex",
+		"prosemd_lsp",
+		"pylsp",
+		"quick_lint_js",
+		"sumneko_lua",
+		"texlab",
 	},
-  })
-  
-  local lspconfig = require("lspconfig")
-  
+})
+
 -- 安裝列表
 -- { key: 語言 value: 配置文件 }
 -- key 必須為下列網址列出的名稱
@@ -42,9 +58,8 @@ local servers = {
 -- 自動安裝 Language Servers
 for name, config in pairs(servers) do
 	if config ~= nil and type(config) == "table" then
-	  config.on_setup(lspconfig[name])
+		config.on_setup(lspconfig[name])
 	else
-	  lspconfig[name].setup({})
+		lspconfig[name].setup({})
 	end
-  end
-  
+end
