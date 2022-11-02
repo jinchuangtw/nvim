@@ -4,6 +4,7 @@ vim.g.maplocalleader = " "
 local map = vim.api.nvim_set_keymap
 -- 復用 opt 參數
 local opt = { noremap = true, silent = true }
+local opt_expr = { expr = true, silent = true }
 
 -- 取消 s 預設功能
 map("n", "s", "", opt)
@@ -111,7 +112,7 @@ pluginKeys.mapLSP = function(mapbuf)
 	mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
 	mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
 	mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
-	mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
+	mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opt)
 	-- 没用到
 	-- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
 	-- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)

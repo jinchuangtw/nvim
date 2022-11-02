@@ -1,6 +1,7 @@
+-- check whether null-ls is installed
 local status, null_ls = pcall(require, "null-ls")
 if not status then
-	vim.notify("沒有找到 null-ls")
+	vim.notify("Plugin:null-ls not found.")
 	return
 end
 
@@ -39,10 +40,10 @@ null_ls.setup({
 		-- formatting.fixjson,
 		-- formatting.black.with({ extra_args = { "--fast" } }),
 	},
-	-- 保存自動格式化
+	-- Auto format after saving
 	on_attach = function(client)
 		if client.server_capabilities.documentFormattingProvider then
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
 		end
 	end,
 })
